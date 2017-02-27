@@ -30,7 +30,10 @@ class AppKernel extends AbstractKernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
             /* Custom App Bundles */
             new Rudz\FreshBundle\RudzFreshBundle(),
-            new AppBundle\AppBundle()
+            new AppBundle\AppBundle(),
+            /* Generated Bundles */
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle()
         ];
 
         //$bundles[] = new Vendor\VendorBundle\VendorVendorBundle();
