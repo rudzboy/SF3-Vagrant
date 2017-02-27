@@ -14,8 +14,13 @@ VM :
  vagrant ssh
  cd /var/www/sf3fresh/current
  
+# Install depedencies from composer then assets
 ./phing.sh composer.install
 ./phing.sh symfony.install-assets-symlink
+ 
+# Create database
+mysql -u root -psf3fresh -e "create database sf3fresh;"
+
 ```
 
 Play: https://sf3fresh.local/
