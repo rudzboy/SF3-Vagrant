@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <import file="phing/phing.xml" />
+    
+    <target name="phpunit.run" depends="phpunit.check-properties">
+        <if>
+            <isset property="phpunit.install-target" />
+            <then>
+                <phingcall target="${phpunit.install-target}" />
+            </then>
+        </if>
+        
+        <if>
+            <isset property="phpunit.clear-cache-target" />
+            <then>
+                <phingcall target="${phpunit.clear-cache-target}" />
+            </then>
+        </if>
+        
+        <if>
+            <isset property="phpunit.prepare-data-target" />
+            <then>
+                <phingcall target="${phpunit.prepare-data-target}" />
+            </then>
+        </if>
+        
+        <phingcall target="phing.run-command">
+            <property name="phing.command-line" value="env ${phpunit.bin-directory}/phpunit -c ${phpunit.configuration-directory} ${phpunit.parameters}" />
+        </phingcall>
+    </target>
+    
+    <target name="phpunit.check-properties" hidden="true">
+        <if>
+            <not>
+                <isset property="phpunit.bin-directory" />
+            </not>
+            <then>
+                <property name="phpunit.bin-directory" value="vendor/bin" />
+            </then>
+        </if>
+        
+        <if>
+            <not>
+                <isset property="phpunit.configuration-directory" />
+            </not>
+            <then>
+                <property name="phpunit.configuration-directory" value="tests" />
+            </then>
+        </if>
+        
+        <if>
+            <not>
+                <isset property="phpunit.parameters" />
+            </not>
+            <then>
+                <property name="phpunit.parameters" value="" />
+            </then>
+        </if>
+    </target>
+</project>

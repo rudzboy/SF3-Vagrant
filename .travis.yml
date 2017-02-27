@@ -1,0 +1,21 @@
+# see https://docs.travis-ci.com/user/languages/php for more hints
+language: php
+
+php:
+    - 5.6
+    - 7.0
+
+branches:
+    only:
+        - master
+        - develop
+        - release/2.3_LTS
+        - release/2.7_LTS
+
+env:
+    global:
+        - COMPOSER_CACHE_DIR=.composer-cache/
+
+script:
+    - ./phing.sh phpunit.run
+    - ./phing.sh alias.phpunit-run-with-symfony-app-micro-kernel

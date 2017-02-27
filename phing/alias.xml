@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <target name="alias.symfony-clear-cache-test">
+        <phingcall target="symfony.clear-cache">
+            <property name="symfony.environment" value="test" />
+        </phingcall>
+    </target>
+    
+    <target name="alias.phpunit-run-with-symfony-app-micro-kernel">
+        <php expression="putenv('PHPUNIT_SYMFONY_KERNEL_DIRECTORY=app/microframework/');" />
+        
+        <phingcall target="phpunit.run">
+            <property name="phpunit.parameters" value="--exclude-group console,security" />
+            <property name="phpunit.clear-cache-target" value="" />
+        </phingcall>
+    </target>
+</project>

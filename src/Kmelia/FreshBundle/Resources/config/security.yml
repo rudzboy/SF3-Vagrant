@@ -1,0 +1,25 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        in_memory:
+            memory: ~
+    
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        
+        # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+        main:
+            pattern: ^/
+            anonymous: ~
+            http_basic:
+                realm: "Secured with HTTP basic"
+                provider: in_memory
+    
+    access_control:
+        - { path: ^/secured-area, role: ROLE_USER }
+        - { path: ^/, role: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <import file="phing/phing.xml" />
+    
+    <property name="deptrac.phar-file" value="deptrac.phar" />
+    
+    <target name="deptrac.analyze">
+        <phingcall target="deptrac.run-command">
+            <property name="deptrac.command-line" value="analyze" />
+        </phingcall>
+    </target>
+    
+    <target name="deptrac.run-command" depends="deptrac.get-latest" hidden="true">
+        <phingcall target="phing.run-command">
+            <property name="phing.command-line" value="php ${deptrac.phar-file} ${deptrac.command-line}" />
+        </phingcall>
+    </target>
+    
+    <target name="deptrac.get-latest" hidden="true">
+        <if>
+            <available file="${deptrac.phar-file}" type="file" />
+            <then>
+                <phingcall target="deptrac.self-update" />
+            </then>
+            <else>
+                <phingcall target="deptrac.download-from-origin" />
+            </else>
+        </if>
+    </target>
+    
+    <target name="deptrac.download-from-origin" hidden="true">
+        <phingcall target="phing.run-command">
+            <property name="phing.command-line" value="curl -sSL -O http://get.sensiolabs.de/deptrac.phar" />
+        </phingcall>
+    </target>
+    
+    <target name="deptrac.self-update" hidden="true">
+        <echo>beta: no updates!</echo>
+    </target>
+</project>

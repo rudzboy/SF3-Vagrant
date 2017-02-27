@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <import file="phing/phing.xml" />
+    
+    <target name="symfony.clear-cache">
+        <phingcall target="symfony.run-command">
+            <property name="symfony.command-line" value="cache:clear" />
+        </phingcall>
+    </target>
+    
+    <target name="symfony.install-assets">
+        <phingcall target="symfony.run-command">
+            <property name="symfony.command-line" value="assets:install" />
+        </phingcall>
+    </target>
+    
+    <target name="symfony.install-assets-symlink">
+        <phingcall target="symfony.run-command">
+            <property name="symfony.command-line" value="assets:install --symlink --relative" />
+        </phingcall>
+    </target>
+    
+    <target name="symfony.run-command" depends="symfony.check-properties" hidden="true">
+        <phingcall target="phing.run-command">
+            <property name="phing.command-line" value="env ${symfony.directory}/${symfony.bin-directory}/console --env=${symfony.environment} ${symfony.command-line} ${symfony.parameters}" />
+        </phingcall>
+    </target>
+    
+    <target name="symfony.check-properties" hidden="true">
+        <if>
+            <not>
+                <isset property="symfony.directory" />
+            </not>
+            <then>
+                <property name="symfony.directory" value="." />
+            </then>
+        </if>
+        
+        <if>
+            <not>
+                <isset property="symfony.environment" />
+            </not>
+            <then>
+                <property name="symfony.environment" value="dev" />
+            </then>
+        </if>
+        
+        <if>
+            <not>
+                <isset property="symfony.bin-directory" />
+            </not>
+            <then>
+                <property name="symfony.bin-directory" value="bin" />
+            </then>
+        </if>
+        
+        <if>
+            <not>
+                <isset property="symfony.parameters" />
+            </not>
+            <then>
+                <property name="symfony.parameters" value="" />
+            </then>
+        </if>
+    </target>
+    
+    <target name="symfony.search-environments" depends="symfony.check-properties">
+        <foreach param="symfony.configuration-file" target="symfony.search-one-environment">
+            <fileset dir="${symfony.directory}" defaultexcludes="false">
+                <include name="app/config/config_*.yml" />
+            </fileset>
+        </foreach>
+    </target>
+    
+    <target name="symfony.search-one-environment">
+        <property name="symfony.one-environment" value="${symfony.configuration-file}">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern=".*config_" replace="" />
+                    <regexp pattern="\..*" replace="" />
+                </replaceregexp>
+            </filterchain>
+        </property>
+        
+        <echo>Symfony environment: ${symfony.one-environment}
+        </echo>
+        
+        <echo>
+            <fileset dir="${symfony.directory}" defaultexcludes="false">
+                <include name="app/**/config/*_${symfony.one-environment}.yml" />
+                <include name="src/*/*Bundle/Resources/config/*_${symfony.one-environment}.yml" />
+                <include name="web/*_${symfony.one-environment}.php" />
+            </fileset>
+        </echo>
+    </target>
+</project>

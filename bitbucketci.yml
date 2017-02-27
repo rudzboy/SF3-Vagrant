@@ -1,0 +1,6 @@
+image: phpunit/phpunit
+pipeline:
+    - job:
+        script:
+            - ./phing.sh phpunit.run
+            - ./phing.sh alias.phpunit-run-with-symfony-app-micro-kernel

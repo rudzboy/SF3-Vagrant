@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <import file="phing/phing.xml" />
+    
+    <property name="composer.phar-file" value="composer.phar" />
+    
+    <target name="composer.install">
+        <phingcall target="composer.run-command">
+            <property name="composer.command-line" value="install --prefer-dist" />
+        </phingcall>
+    </target>
+    
+    <target name="composer.update">
+        <phingcall target="composer.run-command">
+            <property name="composer.command-line" value="update --prefer-dist" />
+        </phingcall>
+    </target>
+    
+    <target name="composer.run-command" depends="composer.check-properties, composer.get-latest, composer.github_oauth_token" hidden="true">
+        <phingcall target="composer.run-simple-command">
+            <property name="composer.command-line" value="${composer.command-line} --no-interaction --working-dir=${composer.directory} ${composer.parameters}" override="true" />
+        </phingcall>
+    </target>
+    
+    <target name="composer.check-properties" hidden="true">
+        <if>
+            <not>
+                <isset property="composer.parameters" />
+            </not>
+            <then>
+                <property name="composer.parameters" value="" />
+            </then>
+        </if>
+        
+        <if>
+            <not>
+                <isset property="composer.directory" />
+            </not>
+            <then>
+                <property name="composer.directory" value="." />
+            </then>
+        </if>
+    </target>
+    
+    <target name="composer.get-latest" hidden="true">
+        <if>
+            <available file="${composer.phar-file}" type="file" />
+            <then>
+                <phingcall target="composer.self-update" />
+            </then>
+            <else>
+                <phingcall target="composer.download-from-origin" />
+            </else>
+        </if>
+    </target>
+    
+    <target name="composer.download-from-origin" hidden="true">
+        <phingcall target="phing.run-command">
+            <property name="phing.command-line" value="curl -sS http://getcomposer.org/installer | php" />
+        </phingcall>
+    </target>
+    
+    <target name="composer.self-update" hidden="true">
+        <phingcall target="composer.run-simple-command">
+            <property name="composer.command-line" value="self-update" />
+        </phingcall>
+    </target>
+    
+    <target name="composer.github_oauth_token" hidden="true">
+        <if>
+            <isset property="env.COMPOSER_GITHUB_OAUTH_TOKEN" />
+            <then>
+                <phingcall target="composer.run-simple-command">
+                    <property name="phing.command-level" value="debug" />
+                    <property name="composer.command-line" value="config github-oauth.github.com ${env.COMPOSER_GITHUB_OAUTH_TOKEN}" />
+                </phingcall>
+                
+                <echo>create github-oauth.github.com from COMPOSER_GITHUB_OAUTH_TOKEN</echo>
+            </then>
+        </if>
+    </target>
+    
+    <target name="composer.run-simple-command" hidden="true">
+        <phingcall target="phing.run-command">
+            <property name="phing.command-line" value="php ${composer.phar-file} ${composer.command-line}" />
+        </phingcall>
+    </target>
+</project>

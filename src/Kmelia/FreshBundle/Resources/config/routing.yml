@@ -1,0 +1,42 @@
+homepage:
+    path: /
+    defaults: { _controller: "KmeliaFreshBundle:Homepage:defaultHttpCache" }
+    methods:  [GET]
+
+routing_http_cache:
+    path: /routing-http-cache
+    defaults:
+        _controller: "KmeliaFreshBundle:Homepage:defaultHttpCache"
+        response_handler: { http_cache_duration: 1 }
+    methods:  [GET]
+
+specified_http_cache:
+    path: /specified-http-cache
+    defaults: { _controller: "KmeliaFreshBundle:Homepage:specifiedHttpCache" }
+    methods:  [GET]
+
+specified_http_cache_and_routing_configuration:
+    path: /specified-http-cache-and-routing-configuration
+    defaults:
+        _controller: "KmeliaFreshBundle:Homepage:specifiedHttpCache"
+        response_handler: { http_cache_duration: 3 }
+    methods:  [GET]
+
+specified_http_cache_and_routing_configuration_override:
+    path: /specified-http-cache-and-routing-configuration-override
+    defaults:
+        _controller: "KmeliaFreshBundle:Homepage:specifiedHttpCache"
+        response_handler:
+            http_cache_duration: 4
+            override: true
+    methods:  [GET]
+
+no_http_cache_homepage:
+    path: /no-http-cache
+    defaults: { _controller: "KmeliaFreshBundle:Homepage:noHttpCacheHomepage" }
+    methods:  [GET]
+
+secured_area:
+    path: /secured-area
+    defaults: { _controller: "KmeliaFreshBundle:Homepage:defaultHttpCache" }
+    methods:  [GET]

@@ -1,0 +1,21 @@
+imports:
+    - { resource: ../microframework/config/config_test.yml }
+    - { resource: config_dev.yml }
+
+framework:
+    session:
+        storage_id: session.storage.mock_file
+    profiler:
+        collect: false
+
+doctrine:
+    dbal:
+        driver: "pdo_sqlite"
+        path:   "%kernel.root_dir%/../tests/database.db3"
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+swiftmailer:
+    disable_delivery: true

@@ -1,0 +1,12 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+services:
+#    kmelia.service_name_with_setter:
+#        class: Kmelia\FreshBundle\ClassName
+#        calls:
+#            - [setContainer, ["@service_container"]]
+#            - [setParameters, ["plain_value", "%parameter_name%"]]
+
+#    kmelia.service_name_with_construct:
+#        class: Kmelia\FreshBundle\ClassName
+#        arguments: ["@service_container", "plain_value", "%parameter_name%"]
