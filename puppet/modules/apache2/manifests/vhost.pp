@@ -1,7 +1,7 @@
 define apache2::vhost() {
     file {
         "/etc/apache2/sites-available/${name}":
-            source  => "puppet:///modules/apache2/${vegas_environment}/${name}",
+            source  => "puppet:///modules/apache2/${fresh_environment}/${name}",
             require => Package['apache2'],
             notify  => Service['apache2'];
 

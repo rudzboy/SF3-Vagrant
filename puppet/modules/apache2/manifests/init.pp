@@ -27,7 +27,7 @@ class apache2 {
         owner => 'root',
         group => 'root',
         path => "${ssl_cert_dir}/${ssl_cert_name}",
-        source => "puppet:///modules/apache2/${vegas_environment}/${ssl_cert_name}",
+        source => "puppet:///modules/apache2/${fresh_environment}/${ssl_cert_name}",
     }
     
     if $ssl_key_name != undef {
@@ -37,7 +37,7 @@ class apache2 {
             owner => 'root',
             group => 'root',
             path => "${ssl_cert_dir}/${ssl_key_name}",
-            source => "puppet:///modules/apache2/${vegas_environment}/${ssl_key_name}",
+            source => "puppet:///modules/apache2/${fresh_environment}/${ssl_key_name}",
         }
     }
     

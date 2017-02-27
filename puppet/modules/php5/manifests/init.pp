@@ -17,14 +17,14 @@ class php5 {
     
     file {
         "/etc/php5/fpm/pool.d/www.conf":
-            source  => "puppet:///modules/php5/${vegas_environment}/www.conf",
+            source  => "puppet:///modules/php5/${fresh_environment}/www.conf",
             require => Package['php5-fpm'],
             notify  => Service['php5-fpm'];
     }
 
     file {
         "/etc/php5/fpm/php.ini":
-            source  => "puppet:///modules/php5/${vegas_environment}/fpm/php.ini",
+            source  => "puppet:///modules/php5/${fresh_environment}/fpm/php.ini",
             require => Package['php5-fpm'],
             notify  => Service['php5-fpm'];
     }
