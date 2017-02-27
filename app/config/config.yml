@@ -2,8 +2,6 @@ imports:
     - { resource: "@RudzFreshBundle/Resources/config/parameters.yml" }
     - { resource: "@RudzFreshBundle/Resources/config/security.yml" }
     - { resource: "@RudzFreshBundle/Resources/config/services.yml" }
-    - { resource: "@RudzFreshBundle/Resources/config/sonata_classification.yml" }
-    - { resource: "@RudzFreshBundle/Resources/config/sonata_media.yml" }
 
 framework:
     #esi:             ~
@@ -56,11 +54,3 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
-
-# SonataAdminBundle Configuration
-sonata_block:
-    default_contexts: [cms]
-    blocks:
-        # enable the SonataAdminBundle block
-        sonata.admin.block.admin_list:
-            contexts: [admin]
