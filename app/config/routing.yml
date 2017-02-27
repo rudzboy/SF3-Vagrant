@@ -1,3 +1,8 @@
+# Import Sonata Routing Configuration
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
+
 rudz_fresh:
     resource: "@RudzFreshBundle/Resources/config/routing.yml"
     prefix: /
