@@ -1,8 +1,8 @@
 <?php
 
-namespace Kmelia\FreshBundle\Command\Debug;
+namespace Rudz\FreshBundle\Command\Debug;
 
-use AppBundle\Command\AbstractKmeliaCommand;
+use AppBundle\Command\AbstractRudzCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-class ParametersCommand extends AbstractKmeliaCommand
+class ParametersCommand extends AbstractRudzCommand
 {
     const
         CONSOLE_WIDTH            = 70,
@@ -27,7 +27,7 @@ class ParametersCommand extends AbstractKmeliaCommand
     {
         $this
             ->enableLocking()
-            ->setName('kmelia:debug:parameters')
+            ->setName('rudz:debug:parameters')
             ->setDescription('Debug the parameters per environment without launching it!')
             ->addArgument('environments', InputArgument::REQUIRED, 'List separate by comma')
             ->addOption('filter', 'f', InputOption::VALUE_OPTIONAL, 'Filter the parameters with this regexp')

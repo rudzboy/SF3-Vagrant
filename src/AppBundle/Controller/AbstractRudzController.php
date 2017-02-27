@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RequestStack;
 use AppBundle\Controller\Handler\SecurityResponseHandler;
 
-abstract class AbstractKmeliaController extends Controller
+abstract class AbstractRudzController extends Controller
 {
     private
         $requestStack,

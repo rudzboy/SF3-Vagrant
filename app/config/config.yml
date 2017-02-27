@@ -1,7 +1,7 @@
 imports:
-    - { resource: "@KmeliaFreshBundle/Resources/config/parameters.yml" }
-    - { resource: "@KmeliaFreshBundle/Resources/config/security.yml" }
-    - { resource: "@KmeliaFreshBundle/Resources/config/services.yml" }
+    - { resource: "@RudzFreshBundle/Resources/config/parameters.yml" }
+    - { resource: "@RudzFreshBundle/Resources/config/security.yml" }
+    - { resource: "@RudzFreshBundle/Resources/config/services.yml" }
 
 framework:
     #esi:             ~

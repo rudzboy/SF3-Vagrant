@@ -1,6 +1,6 @@
 Fresh Symfony 3.x
 =================
-[![Build Status](https://travis-ci.org/kmelia/fresh-symfony.svg?branch=master)](https://travis-ci.org/kmelia/fresh-symfony/branches)
+[![Build Status](https://travis-ci.org/rudz/fresh-symfony.svg?branch=master)](https://travis-ci.org/rudz/fresh-symfony/branches)
 
 Provides a [**Fresh Symfony**][1] to start your application quickly.
 
@@ -38,12 +38,12 @@ To run the unit tests:
 ```
 
 
-  [1]: https://bitbucket.org/kmelia/fresh-symfony "Fresh Symfony"
-  [2]: https://bitbucket.org/kmelia/fresh-symfony/get/master.tar.gz "Latest stable release of Fresh Symfony"
+  [1]: https://bitbucket.org/rudz/fresh-symfony "Fresh Symfony"
+  [2]: https://bitbucket.org/rudz/fresh-symfony/get/master.tar.gz "Latest stable release of Fresh Symfony"
   [3]: https://github.com/symfony/symfony-standard/tree/3.1 "The Symfony Standard Edition 3.1 release"
   [4]: https://symfony.com/roadmap "Symfony roadmap"
   [5]: https://phpunit.de/manual/current/en/ "The PHPUnit stable release"
   [6]: https://symfony.com/doc/current/book/testing.html "Symfony documentation"
-  [7]: https://bitbucket.org/kmelia/fresh-symfony/src/master/CONFIGURE.md "Fresh Symfony documentation"
-  [8]: https://bitbucket.org/kmelia/fresh-symfony/src/release/2.3_LTS/README.md "Fresh Symfony 2.3 LTS"
-  [9]: https://bitbucket.org/kmelia/fresh-symfony/src/release/2.7_LTS/README.md "Fresh Symfony 2.7 LTS"
+  [7]: https://bitbucket.org/rudz/fresh-symfony/src/master/CONFIGURE.md "Fresh Symfony documentation"
+  [8]: https://bitbucket.org/rudz/fresh-symfony/src/release/2.3_LTS/README.md "Fresh Symfony 2.3 LTS"
+  [9]: https://bitbucket.org/rudz/fresh-symfony/src/release/2.7_LTS/README.md "Fresh Symfony 2.7 LTS"

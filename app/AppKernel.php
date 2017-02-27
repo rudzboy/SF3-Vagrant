@@ -1,6 +1,6 @@
 <?php
 
-use Kmelia\FreshBundle\AbstractKernel;
+use Rudz\FreshBundle\AbstractKernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends AbstractKernel
@@ -20,7 +20,7 @@ class AppKernel extends AbstractKernel
         ];
         
         // src
-        $bundles[] = new Kmelia\FreshBundle\KmeliaFreshBundle();
+        $bundles[] = new Rudz\FreshBundle\RudzFreshBundle();
         
         // vendor
         //$bundles[] = new Vendor\VendorBundle\VendorVendorBundle();

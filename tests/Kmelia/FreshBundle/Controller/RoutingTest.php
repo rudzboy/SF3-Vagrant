@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Kmelia\FreshBundle\Controller;
+namespace Tests\Rudz\FreshBundle\Controller;
 
 use Tests\AppBundle\WebTestCase;
 

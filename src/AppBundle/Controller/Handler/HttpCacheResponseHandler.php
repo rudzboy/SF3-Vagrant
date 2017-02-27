@@ -74,7 +74,7 @@ class HttpCacheResponseHandler extends AbstractResponseHandler implements Respon
     }
     
     /**
-     * @see src/Kmelia/FreshBundle/Resources/config/routing.yml
+     * @see src/Rudz/FreshBundle/Resources/config/routing.yml
      */
     private function readRoutingConfiguration()
     {

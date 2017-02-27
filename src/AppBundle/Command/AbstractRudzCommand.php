@@ -7,7 +7,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\LockHandler;
 
-abstract class AbstractKmeliaCommand extends ContainerAwareCommand
+abstract class AbstractRudzCommand extends ContainerAwareCommand
 {
     const
         ERROR_EXIT_VALUE = 2;
@@ -18,7 +18,7 @@ abstract class AbstractKmeliaCommand extends ContainerAwareCommand
     
     /**
      * Locking mechanism
-     * @return \AppBundle\Command\AbstractKmeliaCommand
+     * @return \AppBundle\Command\AbstractRudzCommand
      */
     protected function enableLocking()
     {

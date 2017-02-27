@@ -1,6 +1,6 @@
 <?php
 
-namespace Kmelia\FreshBundle;
+namespace Rudz\FreshBundle;
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\Config\EnvParametersResource;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kmelia\FreshBundle\Controller;
+namespace Rudz\FreshBundle\Controller;
 
 use AppBundle\Controller\Handler\HttpCacheResponseHandler;
 
@@ -8,14 +8,14 @@ class HomepageController extends AbstractController
 {
     public function defaultHttpCacheAction()
     {
-        return $this->render('KmeliaFreshBundle:Homepage:home.html.twig');
+        return $this->render('RudzFreshBundle:Homepage:home.html.twig');
     }
     
     public function specifiedHttpCacheAction()
     {
         $this->getHttpCacheResponseHandler()->setDuration(2);
         
-        return $this->render('KmeliaFreshBundle:Homepage:home.html.twig');
+        return $this->render('RudzFreshBundle:Homepage:home.html.twig');
     }
     
     public function noHttpCacheHomepageAction()
@@ -23,6 +23,6 @@ class HomepageController extends AbstractController
         // remove http cache handler
         $this->removeResponseHandlers(new HttpCacheResponseHandler());
         
-        return $this->render('KmeliaFreshBundle:Homepage:home.html.twig');
+        return $this->render('RudzFreshBundle:Homepage:home.html.twig');
     }
 }

@@ -20,7 +20,7 @@ class MicroframeworkAppKernel extends AppKernel
         );
         
         // src
-        $bundles[] = new Kmelia\FreshBundle\KmeliaFreshBundle();
+        $bundles[] = new Rudz\FreshBundle\RudzFreshBundle();
         
         // development or integration
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
@@ -53,6 +53,6 @@ class MicroframeworkAppKernel extends AppKernel
         }
         
         // load the routes
-        $routes->mount('/', $routes->import('@KmeliaFreshBundle/Resources/config/routing.yml'));
+        $routes->mount('/', $routes->import('@RudzFreshBundle/Resources/config/routing.yml'));
     }
 }

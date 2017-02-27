@@ -1,13 +1,13 @@
 <?php
 
-namespace Kmelia\FreshBundle\Controller;
+namespace Rudz\FreshBundle\Controller;
 
-use AppBundle\Controller\AbstractKmeliaController;
+use AppBundle\Controller\AbstractRudzController;
 use AppBundle\Controller\Handler\HttpCacheResponseHandler;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityRepository;
 
-abstract class AbstractController extends AbstractKmeliaController
+abstract class AbstractController extends AbstractRudzController
 {
     private
         $httpCacheResponseHandler,

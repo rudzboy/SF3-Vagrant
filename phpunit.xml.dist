@@ -14,7 +14,7 @@
     <testsuites>
         <testsuite name="fresh-symfony">
             <directory>tests/AppBundle</directory>
-            <directory>tests/Kmelia</directory>
+            <directory>tests/Rudz</directory>
         </testsuite>
         <testsuite name="project">
             <directory>tests/Project</directory>

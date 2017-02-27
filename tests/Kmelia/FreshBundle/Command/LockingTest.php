@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Kmelia\FreshBundle\Command;
+namespace Tests\Rudz\FreshBundle\Command;
 
 use Tests\AppBundle\WebTestCase;
-use Kmelia\FreshBundle\Command\Test\SleeperCommand;
+use Rudz\FreshBundle\Command\Test\SleeperCommand;
 use Symfony\Component\Process\Process;
 
 class LockingTest extends WebTestCase

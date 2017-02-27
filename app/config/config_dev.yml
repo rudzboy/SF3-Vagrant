@@ -1,7 +1,7 @@
 imports:
     - { resource: ../microframework/config/config_dev.yml }
     - { resource: config.yml }
-    - { resource: "@KmeliaFreshBundle/Resources/config/parameters_dev.yml" }
+    - { resource: "@RudzFreshBundle/Resources/config/parameters_dev.yml" }
 
 framework:
     router:

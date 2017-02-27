@@ -1,12 +1,12 @@
 <?php
 
-namespace Kmelia\FreshBundle\Command\Test;
+namespace Rudz\FreshBundle\Command\Test;
 
-use AppBundle\Command\AbstractKmeliaCommand;
+use AppBundle\Command\AbstractRudzCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class SleeperCommand extends AbstractKmeliaCommand
+class SleeperCommand extends AbstractRudzCommand
 {
     const
         SLEEPING_TIME = 2;
@@ -17,7 +17,7 @@ class SleeperCommand extends AbstractKmeliaCommand
         $this->enableLocking();
         
         $this
-            ->setName('kmelia:test:sleeper')
+            ->setName('rudz:test:sleeper')
             ->setDescription(sprintf(
                 'This command sleeps for %d seconds.',
                 self::SLEEPING_TIME

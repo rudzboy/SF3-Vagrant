@@ -3,7 +3,7 @@
 # configuration
 phing=vendor/bin/phing
 temporaryPhing=phing.phar
-repositoryUrl=https://bitbucket.org/kmelia/phing-launcher
+repositoryUrl=https://github.com/rudzboy/SF3-Vagrant
 configurationDirectory=phing
 phingLauncher=phing.sh
 
