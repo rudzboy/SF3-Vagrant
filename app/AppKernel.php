@@ -16,18 +16,23 @@ class AppKernel extends AbstractKernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            /* SonataAdminBundle */
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
+            /* SonataClassificationBundle */
+            new Sonata\ClassificationBundle\SonataClassificationBundle(),
+            /* SonataNewsBundle */
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            /* Custom App Bundles */
+            new Rudz\FreshBundle\RudzFreshBundle(),
             new AppBundle\AppBundle()
         ];
-        
-        // src
-        $bundles[] = new Rudz\FreshBundle\RudzFreshBundle();
-        
-        // vendor
+
         //$bundles[] = new Vendor\VendorBundle\VendorVendorBundle();
         
         // development or integration

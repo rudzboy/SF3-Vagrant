@@ -4,6 +4,7 @@ class php5 {
                 'php5-fpm',
                 'php5-curl',
                 'php5-mysql',
+                'php5-gd',
                 'php5-intl',
                 'php5-xsl',
                 'php5-rrd']:

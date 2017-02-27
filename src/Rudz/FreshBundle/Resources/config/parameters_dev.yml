@@ -1,10 +1,9 @@
 # Set parameters here for the development target of the app
 parameters:
     database_driver:   pdo_mysql
-    database_host:     ~
+    database_host:     127.0.0.1
     database_port:     ~
-    database_name:     ~
-    database_user:     ~
-    database_password: ~
-    
+    database_name:     sf3fresh
+    database_user:     root
+    database_password: sf3fresh
     swiftmailer.delivery_address: me@example.com
