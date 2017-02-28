@@ -1,3 +1,43 @@
-{% extends '::default/index.html.twig' %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            {% block title %}SF3 - Welcome!{% endblock %}
+        </title>
 
-{% block title %}Fresh Symfony{% endblock %}
+        {% block stylesheets %}
+            {% stylesheets
+                'bundles/rudzfresh/vendor/css/*'
+                filter='cssrewrite'
+            %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block navbar %}
+            {% include 'RudzFreshBundle:layout:navbar.html.twig' %}
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+
+        {% block footer %}
+            {% include 'RudzFreshBundle:layout:footer.html.twig' %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% javascripts
+                '@RudzFreshBundle/Resources/public/vendor/js/jquery-3.1.1.min.js'
+                '@RudzFreshBundle/Resources/public/vendor/js/tether.min.js'
+                '@RudzFreshBundle/Resources/public/vendor/js/bootstrap.min.js'
+                '@RudzFreshBundle/Resources/public/js/*'
+            %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>
