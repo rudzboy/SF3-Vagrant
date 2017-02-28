@@ -1,6 +1,6 @@
 homepage:
     path: /
-    defaults: { _controller: "RudzFreshBundle:Homepage:noHttpCacheHomepage" }
+    defaults: { _controller: "RudzFreshBundle:Homepage:defaultHttpCache" }
     methods:  [GET]
 
 routing_http_cache:

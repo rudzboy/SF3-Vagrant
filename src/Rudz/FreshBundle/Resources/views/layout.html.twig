@@ -3,14 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>
-            {% block title %}SF3 - Welcome!{% endblock %}
-        </title>
+        <title>{% block title %}SF3 Fresh{% endblock %}</title>
 
         {% block stylesheets %}
             {% stylesheets
                 'bundles/rudzfresh/vendor/css/*'
                 filter='cssrewrite'
+                output='css/compiled/vendors.min.css'
             %}
                 <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
@@ -34,7 +33,7 @@
                 '@RudzFreshBundle/Resources/public/vendor/js/jquery-3.1.1.min.js'
                 '@RudzFreshBundle/Resources/public/vendor/js/tether.min.js'
                 '@RudzFreshBundle/Resources/public/vendor/js/bootstrap.min.js'
-                '@RudzFreshBundle/Resources/public/js/*'
+                output='js/compiled/vendors.min.js'
             %}
                 <script src="{{ asset_url }}"></script>
             {% endjavascripts %}

@@ -1,0 +1,39 @@
+{% extends 'RudzFreshBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Homepage{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    {% block jumbotron %}
+        {% include 'RudzFreshBundle:block:jumbotron.html.twig' %}
+    {% endblock %}
+
+    <div class="container">
+
+        {% block flexbox %}
+            {% include 'RudzFreshBundle:block:flexbox.html.twig' %}
+        {% endblock %}
+
+        {% block carousel %}
+            {% include 'RudzFreshBundle:block:carousel.html.twig' %}
+        {% endblock %}
+
+        <div class="row">
+            {% for i in 0..2 %}
+                <div class="col-md-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
